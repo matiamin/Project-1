@@ -20,7 +20,7 @@ body {
   font-family:'IM Fell English SC', serif;
   text-align: center;
   color:black;
-  font-size: 50px;
+  font-size: 40px;
 }
 .question-text:hover {
   text-shadow: 2px 2px #fff002;
@@ -104,4 +104,8 @@ input[placeholder="Player Name"] {
 input[value="Start"]:hover {
   background: green;
   color: white;
+}
+.form {
+  margin-top: 10px;
+  margin-left: 105px;
 }
