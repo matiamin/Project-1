@@ -1,6 +1,6 @@
 
 var quiz = [
-  {question: "Who is the coolest coder?", answer:["adam","Adam","Andy","andy","John","john",
+  {question: "Who is the coolest coder?", answer:["adam","Mujeeb","mujeeb","Mati","mati","Adam","Andy","andy","John","john",
   "nick","Nick","adrian","Adrian","matt","Matt","jesse","Jesse"]},
   {question:"What is Mitt Romney's middle name?", answer:["mitt","Mitt"]},
   {question: "What's the capital of Afghanistan?", answer:["Kabul","kabul","kabol","Kabol"]},
