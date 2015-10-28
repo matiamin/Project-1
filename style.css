@@ -7,7 +7,7 @@ body {
   background: white;
   margin: 0 auto 100px auto;
   width: 500px;
-  height: 650px;
+  height: 750px;
   box-shadow: 10px 10px 5px #888888;
 }
 
@@ -22,7 +22,6 @@ body {
   color:black;
   font-size: 50px;
 }
-
 .question-text:hover {
   text-shadow: 2px 2px #fff002;
 }
@@ -84,7 +83,25 @@ input[type=submit] {
   color:white;
 }
 .score {
-  font-size: 20px;
+  font-family:'IM Fell English SC', serif;
+  font-size: 25px;
   text-align: center;
   color: purple;
+}
+
+.displayName{
+  font-size:25px;
+  text-align: center;
+  color: grey;
+}
+
+input[placeholder="Player Name"] {
+  font-size: 15px;
+  text-align: center;
+  color: grey;
+}
+
+input[value="Start"]:hover {
+  background: green;
+  color: white;
 }
