@@ -8,8 +8,8 @@ var quiz = [
 ];
 
 var currentQuestion = 0;
-var questions = 0;
-var count = 0;
+var questionCount = 0;
+var answerCount = 0;
 
 $(".question-text").hide();
 $(".score").hide();
@@ -19,20 +19,27 @@ $(".submitName").on("click", function (){
   event.preventDefault();
   $(".displayName").text($(".playerName").val()+"'s");
   $(".playerName").val("");
-  $(".score").show();
-  $(".question-text").show();
+  $(".question-text").show("");
+  $(".question-text").html(quiz[0].question);
   $(".submitAnswer").on ("click", function(){
-    questions++;
 
-    $(".result-box").text(+questions +" "+"of 5 Qs" ).css("color","green");
+    $(".score").show();
+    questionCount++;
+    $(".result-box").text(+questionCount +" "+"of 5 Qs" ).css("color","green");
+    /*why isn't is displaying the message in the text body? Instead, it disappears.*/
+    if (questionCount===quiz[currentQuestion].question) {
+      event.preventDefault();
+      $(".question-text").text("Reset to play again");
+    }
     var answer = ($(".typeAnswer").val());
     event.preventDefault();
     for (i=0; i<=quiz[currentQuestion].answer.length;i++) {
       if (answer === quiz[currentQuestion].answer[i]){
-        count++;
-        $(".score").html("correct answers:"+" "+count +" "+ "out 5");
+        answerCount++;
+        $(".score").html("correct answers:"+" "+answerCount +" "+ "out 5");
       }
     }
+
     currentQuestion++;
     $(".question-text").html(quiz[currentQuestion].question);
     $(".typeAnswer").val("");
@@ -42,15 +49,12 @@ $(".submitName").on("click", function (){
 });
 
 $(".typeAnswer").val("");
-$(".question-text").html(quiz[currentQuestion].question);
 $(".resetBoard").on ("click", function () {
   $(".question-text").html(" ");
+
 });
 
-
-//After name submittion, whether in the middle of the game, it should reset the entire board.
-//The trick is to keep the name of the new player.
-//How do I hide the answer input and the auto response of Correct and Wrong after a few secs of
-//submitting the answer?
-//Set up a function to display winner or loser based on how many questions are answered correctly
-//at the end. And by clicking the reset button or putting in name again should restart the game.
+/*After name submittion, even if in the middle of a game, it should reset the entire board
+with a starting set of score and first question and show the new player's name.*/
+/*Showing a "Play again" message after a player has answered all questions.*/
+/*clicking on the startbutton without any value in the input should show a reset blank board.*/
