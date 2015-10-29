@@ -1,12 +1,14 @@
 
 var quiz = [
-  {question: "Who is the coolest coder?", answer:["adam","me","Mujeeb","mujeeb","Mati","mati","Adam","Andy","andy","John","john",
+
+  {question: "Who is the coolest coder?", answer:["adam","me","Mujeeb","mujeeb","Mati","mati","Adam","Andy","andy","John","john"]},
+  {question: "Who is the coolest coder?", answer:["adam","me", "Adam","Andy","andy","John","john",
   "nick","Nick","adrian","Adrian","matt","Matt","jesse","Jesse"]},
   {question:"What is Mitt Romney's middle name?", answer:["mitt","Mitt"]},
   {question: "What's the capital of Afghanistan?", answer:["Kabul","kabul","kabol","Kabol"]},
   {question: "Which U.S. state is nearest to the former Soviet Union? ", answer:["alaska","Alaska"]},
   {question: "What is Canada's national animal? ", answer:["beaver","Beaver"]},
-  {question: "Who is it that removed Broccoli from the WH menus?", answer:["bush","Bush", "George", "george", "george bush", "George Bush", "George bush"]},
+  {question: "Who is it that removed Broccoli from the WH menus?", answer:["bush","Bush", "George", "george", "george bush", "George Bush", "George bush"]}
 ];
 
 var currentQuestion = 0;
@@ -44,7 +46,7 @@ $(".submitName").on("click", function (){
     for (i=0; i<=quiz[currentQuestion].answer.length;i++) {
       if (answer === quiz[currentQuestion].answer[i]){
         answerCount++;
-        $(".score").html("correct answers:"+" "+answerCount);
+        $(".score").html("correct answers:"+answerCount);
       }
     }
 
