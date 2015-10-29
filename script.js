@@ -1,6 +1,6 @@
 
 var quiz = [
-  {question: "Who is the coolest coder?", answer:["adam","Adam","Andy","andy","John","john",
+  {question: "Who is the coolest coder?", answer:["adam","me", "Adam","Andy","andy","John","john",
   "nick","Nick","adrian","Adrian","matt","Matt","jesse","Jesse"]},
   {question:"What is Mitt Romney's middle name?", answer:["mitt","Mitt"]},
   {question: "What's the capital of Afghanistan?", answer:["Kabul","kabul","kabol","Kabol"]},
@@ -44,7 +44,7 @@ $(".submitName").on("click", function (){
     for (i=0; i<=quiz[currentQuestion].answer.length;i++) {
       if (answer === quiz[currentQuestion].answer[i]){
         answerCount++;
-        $(".score").html("correct answers:"+" "+answerCount +" "+ "out of 6");
+        $(".score").html("correct answers:"+" "+answerCount);
       }
     }
 
