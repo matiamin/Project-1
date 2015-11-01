@@ -1,7 +1,5 @@
 
 var quiz = [
-
-  {question: "Who is the coolest coder?", answer:["adam","me","Mujeeb","mujeeb","Mati","mati","Adam","Andy","andy","John","john"]},
   {question: "Who is the coolest coder?", answer:["adam","me", "Adam","Andy","andy","John","john",
   "nick","Nick","adrian","Adrian","matt","Matt","jesse","Jesse"]},
   {question:"What is Mitt Romney's middle name?", answer:["mitt","Mitt"]},
@@ -22,12 +20,12 @@ $(".submitAnswer").off("click");
 //When player name is submited, it appears under with the first quesiton. The start button and the input box disappear.
 $(".submitName").on("click", function (){
   event.preventDefault();
-  $(".displayName").text($(".playerName").val()+"'s");
+  $(".displayName").text($(".playerName").val());
   $(".playerName").val("");
   $(".question-text").show("");
   $(".question-text").html(quiz[0].question);
   $(".form").hide();
-
+  
   //When answer is submitted, qestion number increments by 1.
   $(".submitAnswer").on ("click", function(){
     $(".score").show();
@@ -46,7 +44,7 @@ $(".submitName").on("click", function (){
     for (i=0; i<=quiz[currentQuestion].answer.length;i++) {
       if (answer === quiz[currentQuestion].answer[i]){
         answerCount++;
-        $(".score").html("correct answers:"+answerCount);
+        $(".score").html("correct answers:\n"+answerCount);
       }
     }
 
