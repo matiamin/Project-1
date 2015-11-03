@@ -1,4 +1,6 @@
-
+// be meticulous about formatting, it really helps with readability.
+// e.g. remove the blank line inside the array, and put spaces between comma-
+// separated values (.e.g the answers in the inner arrays)
 var quiz = [
 
   {question: "Who is the coolest coder?", answer:["adam","me","Mujeeb","mujeeb","Mati","mati","Adam","Andy","andy","John","john"]},
@@ -10,6 +12,10 @@ var quiz = [
   {question: "What is Canada's national animal? ", answer:["beaver","Beaver"]},
   {question: "Who is it that removed Broccoli from the WH menus?", answer:["bush","Bush", "George", "george", "george bush", "George Bush", "George bush"]}
 ];
+// I really like how you structured your questions as an array of objects, and
+// espcially how you support multiple correct answers.
+// My one suggestion here for improvement is to rename the `answer` property
+// to `correct_answers`
 
 var currentQuestion = 0;
 var questionCount = 0;
@@ -17,15 +23,17 @@ var answerCount = 0;
 
 $(".question-text").hide();
 $(".score").hide();
-$(".submitAnswer").off("click");
+$(".submitAnswer").off("click"); // is this line doing anything? no listeners
+// have been added yet, so I don't think it's necessary
 
 //When player name is submited, it appears under with the first quesiton. The start button and the input box disappear.
 $(".submitName").on("click", function (){
   event.preventDefault();
   $(".displayName").text($(".playerName").val()+"'s");
   $(".playerName").val("");
-  $(".question-text").show("");
-  $(".question-text").html(quiz[0].question);
+  $(".question-text").show(""); // don't need to pass this empty string to show
+  $(".question-text").html(quiz[0].question); // I'd use `currentQuestion`
+  // instead of 0 here, to convey intent more clearly.
   $(".form").hide();
 
   //When answer is submitted, qestion number increments by 1.
@@ -41,7 +49,7 @@ $(".submitName").on("click", function (){
 
     }
     //checking whether answer is correct or not, counting by 1 every time it is correct.
-    var answer = ($(".typeAnswer").val());
+    var answer = ($(".typeAnswer").val()); // you don't need the extra set of parens here!
     event.preventDefault();
     for (i=0; i<=quiz[currentQuestion].answer.length;i++) {
       if (answer === quiz[currentQuestion].answer[i]){
@@ -60,6 +68,9 @@ $(".submitName").on("click", function (){
 });
   //Reset button clears up the board.
 $(".typeAnswer").val("");
+
+// I feel like more needs to happen here to reset, such as resetting the values
+// of currentQuestion, etc.
 $(".resetBoard").on ("click", function () {
   $(".question-text").html(" ");
 
