@@ -17,7 +17,8 @@ $(".question-text").hide();
 $(".score").hide();
 $(".submitAnswer").off("click");
 
-//When player name is submited, it appears under with the first quesiton. The start button and the input box disappear.
+//When player name is submited, it appears under with the first quesiton.
+//The start button and the input box disappear.
 $(".submitName").on("click", function (){
   event.preventDefault();
   $(".displayName").text($(".playerName").val());
@@ -36,10 +37,9 @@ $(".submitName").on("click", function (){
       $(".question-text").hide();
       $(".displayName").hide();
       $(".submitAnswer").off("click");
-
     }
     //checking whether answer is correct or not, counting by 1 every time it is correct.
-    var answer = ($(".typeAnswer").val());
+    var answer = $(".typeAnswer").val();
     event.preventDefault();
     for (i=0; i<=quiz[currentQuestion].answer.length;i++) {
       if (answer === quiz[currentQuestion].answer[i]){
@@ -52,13 +52,11 @@ $(".submitName").on("click", function (){
     currentQuestion++;
     $(".question-text").html(quiz[currentQuestion].question);
     $(".typeAnswer").val("");
-
   });
-
 });
+
 //Reset button clears up the board.
 $(".typeAnswer").val("");
 $(".resetBoard").on ("click", function () {
   $(".question-text").html(" ");
-
 });
