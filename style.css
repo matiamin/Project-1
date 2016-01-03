@@ -1,10 +1,10 @@
 
 body {
-  background-color: black;
+  background-color: #f3f1f1;
   /*background: url("images/white_carbon/white_carbon.png")*/
 }
 .front {
-  background: black;
+  background: #f3f1f1;
   margin: 0 auto 100px auto;
   width: 500px;
   height: 750px;
@@ -19,7 +19,7 @@ body {
   height: 250px;
   font-family:'IM Fell English SC', serif;
   text-align: center;
-  color:white;
+  color:black;
   font-size: 40px;
 }
 .question-text:hover {

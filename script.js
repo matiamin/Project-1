@@ -25,7 +25,7 @@ $(".submitName").on("click", function (){
   $(".question-text").show("");
   $(".question-text").html(quiz[0].question);
   $(".form").hide();
-  
+
   //When answer is submitted, qestion number increments by 1.
   $(".submitAnswer").on ("click", function(){
     $(".score").show();
@@ -44,7 +44,7 @@ $(".submitName").on("click", function (){
     for (i=0; i<=quiz[currentQuestion].answer.length;i++) {
       if (answer === quiz[currentQuestion].answer[i]){
         answerCount++;
-        $(".score").html("correct answers:\n"+answerCount);
+        $(".score").html("correct answers:\n"+answerCount + "\n" + "\n out of 6");
       }
     }
 
@@ -56,7 +56,7 @@ $(".submitName").on("click", function (){
   });
 
 });
-  //Reset button clears up the board.
+//Reset button clears up the board.
 $(".typeAnswer").val("");
 $(".resetBoard").on ("click", function () {
   $(".question-text").html(" ");
